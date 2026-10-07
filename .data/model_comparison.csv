@@ -1,0 +1,4 @@
+Model,MAE,RMSE,R2,MAE_Rank
+Random Forest,4.909,7.911,0.871,1.0
+Ridge Regression,5.308,7.821,0.874,2.0
+LSTM,17.869,24.388,-0.236,3.0
