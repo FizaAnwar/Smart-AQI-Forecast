@@ -51,12 +51,21 @@ DEFAULT_LOCATION = "Islamabad"
 def get_paths(location: str) -> tuple[Path, Path, Path]:
     """Return the forecast, model comparison, and model paths.
 
-    The runtime files are exposed through the standard
-    data/ and model/ folders for deployment.
+    Prefer the real deployment paths in the repo root, but fall back to
+    the workspace's hidden data/model folders when running locally.
     """
 
-    predictions_dir = BASE_DIR / "data" / "predictions"
-    model_dir = BASE_DIR / "model"
+    candidate_predictions = BASE_DIR / "data" / "predictions"
+    fallback_predictions = BASE_DIR / ".data" / ".predictions"
+    predictions_dir = (
+        candidate_predictions
+        if candidate_predictions.exists()
+        else fallback_predictions
+    )
+
+    candidate_model = BASE_DIR / "model"
+    fallback_model = BASE_DIR / ".model"
+    model_dir = candidate_model if candidate_model.exists() else fallback_model
 
     if location == DEFAULT_LOCATION:
         return (
