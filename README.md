@@ -7,7 +7,7 @@ Description of the app ...
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://cuddly-rotary-phone-qr6997w7x4w3xjp6-8501.app.github.dev/)
 
 ## GitHub Codespaces
 
