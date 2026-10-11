@@ -1,5 +1,5 @@
-import streamlit as st
+from pathlib import Path
+import runpy
 
-st.title('🎈 App Name')
-
-st.write('Hello world!')
+APP_PATH = Path(__file__).resolve().parent / ".app" / "app.py"
+runpy.run_path(str(APP_PATH), run_name="__main__")

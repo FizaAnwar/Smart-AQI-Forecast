@@ -49,12 +49,10 @@ DEFAULT_LOCATION = "Islamabad"
 
 
 def get_paths(location: str) -> tuple[Path, Path, Path]:
-    """Return (forecast, model comparison, random forest) paths.
+    """Return the forecast, model comparison, and model paths.
 
-    Islamabad keeps the original file locations. Other locations are
-    read from a sub-folder named after the city, e.g.
-    data/predictions/lahore/aqi_72h_forecast.csv
-    model/lahore/forecast_random_forest.pkl
+    The runtime files are exposed through the standard
+    data/ and model/ folders for deployment.
     """
 
     predictions_dir = BASE_DIR / "data" / "predictions"
